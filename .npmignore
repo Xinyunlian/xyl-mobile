@@ -16,3 +16,4 @@ webpack/
 build/
 src/site/
 src/App.tsx
+doc.html

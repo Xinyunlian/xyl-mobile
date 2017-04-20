@@ -1,1 +1,1 @@
-#xyl-design-mobile
+#xyl-mobile
