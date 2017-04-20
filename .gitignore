@@ -1,0 +1,15 @@
+.idea/modules.xml
+.idea/unionv2.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/
+node_modules/
+test/
+temp/
+build/
+.vscode/settings.json
+.vscode/
+.awcache/
+.git
+**/*/*.*.d.ts
+npm-debug.log.*
