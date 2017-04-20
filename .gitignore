@@ -13,3 +13,4 @@ build/
 .git
 **/*/*.*.d.ts
 npm-debug.log.*
+yarn.lock
