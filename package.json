@@ -1,9 +1,9 @@
 {
-    "name": "juhe",
-    "version": "1.0.0",
+    "name": "xyl-mobile",
+    "version": "0.0.1",
     "main": "index.js",
-    "repository": "http://git.xyl.local/luyangzhe/juhe.git",
-    "author": "luyangzhe <luyangzhe@xinyunlian.com>",
+    "repository": "https://github.com/xinyunlian-ued/xyl-mobile",
+    "author": "jiangyijun <jiangyijun@xinyunlian.com>",
     "license": "MIT",
     "scripts": {
         "webp": "./node_modules/.bin/webpack --config ./webpack/webpack.config.js",
@@ -11,6 +11,7 @@
         "debug": "./node_modules/.bin/webpack --config ./webpack/webpack.config.js",
         "dist": "./node_modules/.bin/webpack --config ./webpack/webpack.dist.config.js",
         "test": "./node_modules/.bin/webpack --config ./webpack/webpack.test.config.js",
+        "lib": "tsc",
         "tcm": "tcm src",
         "doc": "./node_modules/.bin/webpack --config ./webpack/webpack.doc.config.js"
     },
