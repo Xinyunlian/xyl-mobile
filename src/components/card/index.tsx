@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import classNames from 'classnames';
 import CardHeader from './CardHeader.web';
@@ -9,7 +10,7 @@ export interface CardProps {
   className?: string;
   full?: boolean;
 }
-
+@observer
 export default class Card extends React.Component <CardProps, any> {
   static defaultProps = {
     prefixCls: 'am-card',

@@ -12,7 +12,7 @@ export class Item extends React.Component<TabBarItemProps, any> {
     return null;
   }
 }
-
+@observer
 class AntTabBar extends React.Component<TabBarProps, any> {
   static defaultProps = {
     prefixCls: 'am-tab-bar',

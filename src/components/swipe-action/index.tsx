@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import Swipeout from 'rc-swipeout';
 import classNames from 'classnames';
@@ -8,7 +9,7 @@ export interface ButtonProps {
   onPress?: () => void;
   style?: {};
 }
-
+@observer
 class SwipeAction extends React.Component<SwipeActionProps, any> {
   static defaultProps = {
     prefixCls: 'am-swipe',

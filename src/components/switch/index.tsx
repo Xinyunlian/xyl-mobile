@@ -1,7 +1,8 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import classNames from 'classnames';
 import SwitchProps from './PropsType';
-
+@observer
 export default class Switch extends React.Component<SwitchProps, any> {
   static defaultProps = {
     prefixCls: 'am-switch',
