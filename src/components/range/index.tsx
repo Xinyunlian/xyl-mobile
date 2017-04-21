@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import RcRange from 'rc-slider/lib/Range';
 import RangeProps from './PropsType';
 

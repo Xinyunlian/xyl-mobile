@@ -1,5 +1,5 @@
 /* tslint:disable:jsx-no-multiline-js */
-import React from 'react';
+import * as React from 'react';
 import {observable, action,computed,toJS} from 'mobx';
 import {observer} from 'mobx-react';
 import classNames from 'classnames';

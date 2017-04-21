@@ -1,6 +1,6 @@
 /* tslint:disable:no-switch-case-fall-through */
 /* tslint:disable:no-unused-variable */
-import React from 'react';
+import * as React from 'react';
 /* tslint:enable:no-unused-variable */
 import ReactDOM from 'react-dom';
 import Modal from './Modal.web';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import RcCheckbox from 'rc-checkbox';
 import { RadioProps } from './PropsType';
 import omit from 'omit.js';

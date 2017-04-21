@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import assign from 'object-assign';
 import RcTable from 'rc-table';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import ReactDom from 'react-dom';
 import style from './App.css'
 import ButtonDoc from './pages/button/button'

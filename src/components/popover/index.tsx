@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Tooltip from 'rc-tooltip';
 import Item from './Item.web';
 import tsPropsType from './PropsType';

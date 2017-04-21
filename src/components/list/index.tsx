@@ -1,5 +1,5 @@
 /* tslint:disable:jsx-no-multiline-js */
-import React from 'react';
+import * as React from 'react';
 import Item from './ListItem.web';
 import classNames from 'classnames';
 import { ListProps } from './PropsType';

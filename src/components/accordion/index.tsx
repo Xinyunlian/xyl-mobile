@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import RcCollapse, {Panel} from 'rc-collapse';
 import AccordionProps from './PropsType';
 

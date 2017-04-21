@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import ReactDom from 'react-dom';
 import RefreshControl from 'components/refresh-control/index';
 import 'components/refresh-control/style/index';

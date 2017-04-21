@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import RcSteps from 'rc-steps';
 import Icon from '../icon/index';
 

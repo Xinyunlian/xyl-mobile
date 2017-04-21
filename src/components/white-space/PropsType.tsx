@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 export interface WhiteSpaceProps {
   size?: 'xs'|'sm'|'md'|'lg'|'xl';

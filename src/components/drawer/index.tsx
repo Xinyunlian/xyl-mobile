@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import RcDrawer from 'rc-drawer';
 import tsPropsType from './PropsType';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import assign from 'object-assign';
 
 export default class View extends React.Component<any, any> {

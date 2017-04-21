@@ -1,5 +1,5 @@
 /* tslint:disable:jsx-no-multiline-js */
-import React from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import Flex from '../flex/index';
 import Carousel from '../carousel/index';

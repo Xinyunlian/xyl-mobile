@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Swipeout from 'rc-swipeout';
 import classNames from 'classnames';
 import SwipeActionProps from './PropsType';

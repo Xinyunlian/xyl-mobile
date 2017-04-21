@@ -1,6 +1,6 @@
 /* eslint no-console:0 */
 /* tslint:disable:no-unused-variable */
-import React from 'react';
+import * as React from 'react';
 /* tslint:enable:no-unused-variable */
 import ReactDOM from 'react-dom';
 import Dialog from 'rc-dialog';
