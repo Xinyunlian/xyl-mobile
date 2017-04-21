@@ -5,6 +5,7 @@ import {observer} from 'mobx-react';
 import classNames from 'classnames';
 import InputItemProps from './PropsType';
 import omit from 'omit.js';
+import BaseComponent from '../base/BaseComponent';
 
 function noop() {}
 
@@ -15,7 +16,7 @@ function fixControlledValue(value) {
   return value;
 }
 @observer
-class InputItem extends React.Component < InputItemProps,any > {
+class InputItem extends BaseComponent < InputItemProps,any > {
   static defaultProps = {
     prefixCls: 'am-input',
     prefixListCls: 'am-list',
@@ -38,10 +39,6 @@ class InputItem extends React.Component < InputItemProps,any > {
   @observable _state:any = {
     focused: false,
     placeholder: ''
-  }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
   }
   debounceTimeout : any;
   scrollIntoViewTimeout : any;
