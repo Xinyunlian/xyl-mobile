@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import Tooltip from 'rc-tooltip';
 import Item from './Item.web';
@@ -12,7 +13,7 @@ function recursiveCloneChildren(children, cb = (ch: any, _i: number) => ch) {
     return newChild;
   });
 }
-
+@observer
 export default class Popover extends React.Component<tsPropsType, any> {
   static defaultProps = {
     prefixCls: 'am-popover',

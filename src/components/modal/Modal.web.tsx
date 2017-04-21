@@ -4,7 +4,8 @@ import classNames from 'classnames';
 import assign from 'object-assign';
 import Touchable from 'rc-touchable';
 import ModalProps from './PropsType';
-
+import { observer } from 'mobx-react';
+@observer
 export default class Modal extends React.Component<ModalProps, any> {
   static defaultProps = {
     prefixCls: 'am-modal',

@@ -1,9 +1,10 @@
+import { observer } from 'mobx-react';
 /* tslint:disable:jsx-no-multiline-js */
 import * as React from 'react';
 import Button from '../button/index';
 import classNames from 'classnames';
 import ResultProps from './PropsType';
-
+@observer
 export default class Result extends React.Component<ResultProps, any> {
   static defaultProps = {
     prefixCls: 'am-result',

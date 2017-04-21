@@ -1,7 +1,9 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import RcCollapse, {Panel} from 'rc-collapse';
 import AccordionProps from './PropsType';
 
+@observer
 export default class Accordion extends React.Component<AccordionProps, any> {
     static Panel = Panel;
 

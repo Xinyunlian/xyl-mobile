@@ -4,7 +4,8 @@ import classNames from 'classnames';
 import Flex from '../flex/index';
 import Carousel from '../carousel/index';
 import { DataItem, GridProps } from './PropsType';
-
+import { observer } from 'mobx-react';
+@observer
 export default class Grid extends React.Component<GridProps, any> {
   static defaultProps = {
     data: [],

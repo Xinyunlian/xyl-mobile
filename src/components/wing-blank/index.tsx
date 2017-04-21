@@ -1,7 +1,8 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import classNames from 'classnames';
 import WingBlankProps from './PropsType';
-
+@observer
 export default class WingBlank extends React.Component<WingBlankProps, any> {
   static defaultProps = {
     prefixCls: 'am-wingblank',

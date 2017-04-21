@@ -4,10 +4,10 @@ import List from '../list/index';
 import Checkbox from './Checkbox.web';
 import { CheckboxItemProps } from './PropsType';
 import omit from 'omit.js';
-
+import { observer } from 'mobx-react';
 const ListItem = List.Item;
 function noop() { }
-
+@observer
 export default class CheckboxItem extends React.Component<CheckboxItemProps, any> {
   static defaultProps = {
     prefixCls: 'am-checkbox',

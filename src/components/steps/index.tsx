@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import RcSteps from 'rc-steps';
 import Icon from '../icon/index';
@@ -12,7 +13,7 @@ export interface StepsProps {
   size?: string;
   current?: number;
 }
-
+@observer
 export default class Steps extends React.Component<StepsProps, any> {
   static Step = (RcSteps as any).Step;
 

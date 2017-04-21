@@ -1,6 +1,7 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import Badge from '../badge/index';
-
+@observer
 class Tab extends React.Component<any, any> {
   renderIcon = () => {
     const { dot, badge, selected, selectedIcon, icon, title, prefixCls } = this.props;

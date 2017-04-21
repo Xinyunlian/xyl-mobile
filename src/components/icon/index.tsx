@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-
+import { observer } from 'mobx-react';
 // http://stackoverflow.com/questions/29891458/webpack-require-every-file-in-directory
 // const svgRequire = (require as any).context('./style/assets', false, /\.svg$/);
 // svgRequire.keys().forEach(key => svgRequire(key));
@@ -12,7 +12,7 @@ export interface IconPropType {
   size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
   onClick?: (e?: any) => void;
 }
-
+@observer
 export default class Icon extends React.Component<IconPropType, any> {
   static defaultProps = {
     size: 'md',

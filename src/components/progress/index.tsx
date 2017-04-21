@@ -1,8 +1,9 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import classNames from 'classnames';
 import assign from 'object-assign';
 import ProgressProps from './PropsType';
-
+@observer
 export default class Progress extends React.Component<ProgressProps, any> {
   static defaultProps = {
     prefixCls: 'am-progress',

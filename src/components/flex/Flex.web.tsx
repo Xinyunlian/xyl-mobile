@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { FlexProps } from './PropsType';
-
+import { observer } from 'mobx-react';
+@observer
 export default class Flex extends React.Component<FlexProps, any> {
   static Item: any;
 

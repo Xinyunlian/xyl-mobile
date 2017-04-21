@@ -1,7 +1,8 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import classNames from 'classnames';
 import WhiteSpaceProps from './PropsType';
-
+@observer
 export default class WhiteSpace extends React.Component<WhiteSpaceProps, any> {
   static defaultProps = {
     prefixCls: 'am-whitespace',

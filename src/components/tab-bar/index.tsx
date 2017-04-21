@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import Tabs, { TabPane } from 'rc-tabs';
 import Tab from './Tab.web';
@@ -5,7 +6,7 @@ import TabContent from 'rc-tabs/lib/TabContent';
 import TabBar from 'rc-tabs/lib/TabBar';
 import getDataAttr from '../_util/getDataAttr';
 import { TabBarProps, TabBarItemProps } from './PropsType';
-
+@observer
 export class Item extends React.Component<TabBarItemProps, any> {
   render() {
     return null;

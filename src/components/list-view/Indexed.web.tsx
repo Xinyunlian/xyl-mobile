@@ -3,7 +3,8 @@ import MListView from 'rmc-list-view';
 import tsPropsType from './PropsType';
 import handleProps from './handleProps';
 const IndexedList = MListView.IndexedList;
-
+import { observer } from 'mobx-react';
+@observer
 export default class MIndexedList extends React.Component<tsPropsType, any> {
   static defaultProps = {
     prefixCls: 'am-indexed-list',

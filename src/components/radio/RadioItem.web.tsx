@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import classNames from 'classnames';
 import List from '../list/index';
@@ -7,7 +8,7 @@ import omit from 'omit.js';
 
 const ListItem = List.Item;
 function noop() { }
-
+@observer
 export default class RadioItem extends React.Component<RadioItemProps, any> {
   static defaultProps = {
     prefixCls: 'am-radio',

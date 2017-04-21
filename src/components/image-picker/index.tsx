@@ -6,9 +6,9 @@ import Flex from '../flex/index';
 import Toast from '../toast/index';
 import { ImagePickerPropTypes } from './PropsType';
 import Touchable from 'rc-touchable';
-
+import { observer } from 'mobx-react';
 function noop() { }
-
+@observer
 export default class ImagePicker extends React.Component<ImagePickerPropTypes, any> {
   static defaultProps = {
     prefixCls: 'am-image-picker',

@@ -1,9 +1,10 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import RcCheckbox from 'rc-checkbox';
 import { RadioProps } from './PropsType';
 import omit from 'omit.js';
 import classNames from 'classnames';
-
+@observer
 export default class Radio extends React.Component<RadioProps, any> {
   static RadioItem: any;
 

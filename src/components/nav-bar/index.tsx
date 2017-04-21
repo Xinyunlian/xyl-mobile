@@ -2,7 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Icon from '../icon/index';
 import NavBarProps from './PropsType';
-
+import { observer } from 'mobx-react';
+@observer
 export default class NavBar extends React.Component<NavBarProps, any> {
   static defaultProps = {
     prefixCls: 'am-navbar',

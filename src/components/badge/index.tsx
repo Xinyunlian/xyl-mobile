@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import BadgeProps from './PropsType';
-
+import { observer } from 'mobx-react';
+@observer
 export default class Badge extends React.Component<BadgeProps, any> {
   static defaultProps = {
     prefixCls: 'am-badge',

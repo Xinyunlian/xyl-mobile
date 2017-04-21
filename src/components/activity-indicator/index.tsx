@@ -1,7 +1,9 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { observer } from 'mobx-react';
 import ActivityIndicatorProps from './PropsType';
 
+@observer
 export default class ActivityIndicator extends React.Component<ActivityIndicatorProps, any> {
   static defaultProps = {
     prefixCls: 'am-activity-indicator',

@@ -3,7 +3,8 @@ import MListView from 'rmc-list-view';
 import tsPropsType from './PropsType';
 import handleProps from './handleProps';
 import IndexedList from './Indexed.web';
-
+import { observer } from 'mobx-react';
+@observer
 export default class ListView extends React.Component<tsPropsType, any> {
   static defaultProps = {
     prefixCls: 'am-list-view',

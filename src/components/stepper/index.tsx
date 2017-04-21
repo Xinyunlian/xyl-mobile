@@ -1,9 +1,10 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import classNames from 'classnames';
 import RcInputNumber from 'rc-input-number';
 import StepProps from './PropsType';
 import Icon from '../icon/index';
-
+@observer
 export default class Stepper extends React.Component<StepProps, any> {
   static defaultProps = {
     prefixCls: 'am-stepper',

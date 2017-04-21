@@ -1,7 +1,8 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import classNames from 'classnames';
 import Touchable from 'rc-touchable';
-
+@observer
 export default class Item extends React.Component<any, any> {
   static defaultProps = {
     prefixCls: 'am-popover',

@@ -3,7 +3,8 @@ import * as React from 'react';
 import Item from './ListItem.web';
 import classNames from 'classnames';
 import { ListProps } from './PropsType';
-
+import { observer } from 'mobx-react';
+@observer
 export default class List extends React.Component<ListProps, any> {
   static Item = Item;
 

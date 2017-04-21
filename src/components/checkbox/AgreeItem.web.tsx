@@ -1,10 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { observer } from 'mobx-react';
 import Checkbox from './Checkbox.web';
 import { AgreeItemPropsType } from './PropsType';
 import getDataAttr from '../_util/getDataAttr';
 import omit from 'omit.js';
-
+@observer
 export default class AgreeItem extends React.Component<AgreeItemPropsType, any> {
   static defaultProps = {
     prefixCls: 'am-checkbox',

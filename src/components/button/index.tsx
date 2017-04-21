@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Icon from '../icon/index';
 import tsProps from './PropsType';
 import Touchable from 'rc-touchable';
+import { observer } from 'mobx-react';
 
 const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
@@ -24,7 +25,7 @@ function insertSpace(child) {
   }
   return child;
 }
-
+@observer
 class Button extends React.Component<tsProps, any> {
   static defaultProps = {
     prefixCls: 'am-button',

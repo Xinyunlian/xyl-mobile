@@ -1,6 +1,7 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import assign from 'object-assign';
-
+@observer
 export default class View extends React.Component<any, any> {
   static defaultProps = {
     Component: 'div',

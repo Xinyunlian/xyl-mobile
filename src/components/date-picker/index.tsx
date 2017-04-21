@@ -6,7 +6,7 @@ import { formatFn, getProps, getDefaultDate } from './utils';
 import assign from 'object-assign';
 import tsPropsType from './PropsType';
 import { getComponentLocale, getLocaleCode } from '../_util/getLocale';
-
+import { observer } from 'mobx-react';
 function getDefaultProps() {
   return assign({
     prefixCls: 'am-picker',
@@ -15,7 +15,7 @@ function getDefaultProps() {
     minuteStep: 1,
   }, getProps());
 }
-
+@observer
 export default class DatePicker extends React.Component<tsPropsType, any> {
   static defaultProps = getDefaultProps();
 

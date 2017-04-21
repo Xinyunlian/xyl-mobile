@@ -3,7 +3,8 @@ import RcCheckbox from 'rc-checkbox';
 import { CheckboxProps } from './PropsType';
 import omit from 'omit.js';
 import classNames from 'classnames';
-
+import { observer } from 'mobx-react';
+@observer
 export default class Checkbox extends React.Component<CheckboxProps, any> {
   static CheckboxItem: any;
   static AgreeItem: any;

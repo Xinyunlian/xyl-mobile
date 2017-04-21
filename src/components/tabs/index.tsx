@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import RcTabs, { TabPane } from 'rc-tabs';
 import TabsProps from './PropsType';
@@ -5,7 +6,7 @@ import SwipeableTabContent from 'rc-tabs/lib/SwipeableTabContent';
 import TabContent from 'rc-tabs/lib/TabContent';
 import InkTabBar from 'rc-tabs/lib/InkTabBar';
 import SwipeableInkTabBar from 'rc-tabs/lib/SwipeableInkTabBar';
-
+@observer
 export default class Tabs extends React.Component<TabsProps, any> {
   static TabPane = TabPane;
 

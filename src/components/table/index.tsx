@@ -1,7 +1,8 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import assign from 'object-assign';
 import RcTable from 'rc-table';
-
+@observer
 export default class Table extends React.Component<any, any> {
   static defaultProps = {
     dataSource: [],
