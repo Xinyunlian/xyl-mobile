@@ -3,7 +3,7 @@ import React from 'react';
 import {observable, action,computed,toJS} from 'mobx';
 import {observer} from 'mobx-react';
 import classNames from 'classnames';
-import List from '../list/index.web';
+import List from '../list/index';
 import Radio from '../radio/Radio.web';
 import BaseComponent from '../base/BaseComponent';
 

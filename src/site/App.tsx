@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import style from './App.css'
 import ButtonDoc from './pages/button/button'
-import 'components/button/style/index.web';
+import 'components/button/style/index';
 import ReactMarkdown  from 'react-markdown';
 
 

@@ -1,7 +1,7 @@
 {
     "name": "xyl-mobile",
-    "version": "0.0.4",
-    "main": "index.js",
+    "version": "0.0.8",
+    "main": "lib/index.js",
     "repository": "https://github.com/xinyunlian-ued/xyl-mobile",
     "author": "jiangyijun <jiangyijun@xinyunlian.com>",
     "license": "MIT",

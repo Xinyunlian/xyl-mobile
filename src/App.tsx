@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import RefreshControl from 'components/refresh-control/index.web';
-import 'components/refresh-control/style/index.web';
-import ListView from 'components/list-view/index.web';
-import 'components/list-view/style/index.web';
+import RefreshControl from 'components/refresh-control/index';
+import 'components/refresh-control/style/index';
+import ListView from 'components/list-view/index';
+import 'components/list-view/style/index';
 
 const data = [
     {

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import style from './button.css'
-import Button from '../../../components/button/index.web'
-import 'components/button/style/index.web';
+import Button from '../../../components/button/index'
+import 'components/button/style/index';
 import ReactMarkdown  from 'react-markdown';
 
 var input = `
