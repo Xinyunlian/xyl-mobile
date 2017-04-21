@@ -6,15 +6,14 @@ import classNames from 'classnames';
 import Icon from '../icon/index.web';
 import NoticeBarProps from './PropsType';
 import Marquee from './Marquee';
+import BaseComponent from '../base/BaseComponent';
+
 @observer
-export default class NoticeBar extends React.Component<NoticeBarProps, any> {
+export default class NoticeBar extends BaseComponent<NoticeBarProps, any> {
   @observable _state = {
     show: null,
   }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
-  }
+
   static defaultProps = {
     prefixCls: 'am-notice-bar',
     mode: '',

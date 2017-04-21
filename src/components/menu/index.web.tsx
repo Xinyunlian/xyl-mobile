@@ -8,9 +8,10 @@ import List from '../list/index.web';
 import Flex from '../flex/index.web';
 import SubMenu from './SubMenu.web';
 import { MenuProps } from './PropsType';
+import BaseComponent from '../base/BaseComponent';
 
 @observer
-export default class Menu extends React.Component<MenuProps, any> {
+export default class Menu extends BaseComponent<MenuProps, any> {
   static defaultProps = {
     prefixCls: 'am-menu',
     subMenuPrefixCls: 'am-sub-menu',
@@ -22,10 +23,7 @@ export default class Menu extends React.Component<MenuProps, any> {
   @observable _state = {
     firstLevelSelectValue: null,
   }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
-  }
+
   constructor(props) {
     super(props);
      this.changeState({

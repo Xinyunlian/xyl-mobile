@@ -5,6 +5,7 @@ import {observer} from 'mobx-react';
 import classNames from 'classnames';
 import TextareaItemProps from './PropsType';
 import omit from 'omit.js';
+import BaseComponent from '../base/BaseComponent';
 
 function noop() {}
 
@@ -20,7 +21,7 @@ export interface TextareaItemState {
   focused?: boolean;
 }
 @observer
-export default class TextareaItem extends React.Component<TextareaItemProps, TextareaItemState> {
+export default class TextareaItem extends BaseComponent<TextareaItemProps, TextareaItemState> {
   static defaultProps = {
     prefixCls: 'am-textarea',
     prefixListCls: 'am-list',
@@ -41,13 +42,9 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
   debounceTimeout: any;
   scrollIntoViewTimeout: any;
 
-  @observable _state:any = {
+  @observable _state = {
     focus: false,
     focused: false
-  }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
   }
 
   constructor(props) {

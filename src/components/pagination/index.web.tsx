@@ -7,8 +7,9 @@ import Button from '../button/index.web';
 import Flex from '../flex/index.web';
 import PaginationProps from './PropsType';
 import { getComponentLocale } from '../_util/getLocale';
+import BaseComponent from '../base/BaseComponent';
 
-export default class Pagination extends React.Component<PaginationProps, any> {
+export default class Pagination extends BaseComponent<PaginationProps, any> {
   static defaultProps = {
     prefixCls: 'am-pagination',
     mode: 'button',
@@ -18,10 +19,6 @@ export default class Pagination extends React.Component<PaginationProps, any> {
   };
   @observable _state = {
     current: null,
-  }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
   }
   static contextTypes = {
     antLocale: React.PropTypes.object,

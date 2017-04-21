@@ -5,8 +5,10 @@ import classNames from 'classnames';
 import TagProps from './PropsType';
 import Icon from '../icon/index.web';
 import getDataAttr from '../_util/getDataAttr';
+import BaseComponent from '../base/BaseComponent';
+
 @observer
-export default class Tag extends React.Component<TagProps, any> {
+export default class Tag extends BaseComponent<TagProps, any> {
   static defaultProps = {
     prefixCls: 'am-tag',
     disabled: false,
@@ -17,14 +19,11 @@ export default class Tag extends React.Component<TagProps, any> {
     onClose() {},
     afterClose() {},
   };
-  @observable _state:any = {
+  @observable _state = {
     selected: null,
     closed: false
   }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
-  }
+
   constructor(props) {
     super(props);
     this.changeState({

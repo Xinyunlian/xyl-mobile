@@ -5,7 +5,7 @@ import {observer} from 'mobx-react';
 import classNames from 'classnames';
 import Touchable from 'rc-touchable';
 import { ListItemProps, BriefProps } from './PropsType';
-
+import BaseComponent from '../base/BaseComponent';
 @observer
 export class Brief extends React.Component<BriefProps, any> {
   render() {
@@ -15,15 +15,12 @@ export class Brief extends React.Component<BriefProps, any> {
   }
 }
 @observer
-class ListItem extends React.Component<ListItemProps, any> {
-  @observable _state:any = {
+class ListItem extends BaseComponent<ListItemProps, any> {
+  @observable _state = {
     coverRipleStyle: {},
     RipleClicked: false
   }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
-  }
+
   static defaultProps = {
     prefixCls: 'am-list',
     align: 'middle',

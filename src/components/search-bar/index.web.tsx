@@ -3,8 +3,9 @@ import {observable, action,computed,toJS} from 'mobx';
 import {observer} from 'mobx-react';
 import classNames from 'classnames';
 import { SearchBarProps, SearchBarState, defaultProps } from './PropsType';
+import BaseComponent from '../base/BaseComponent';
 
-export default class SearchBar extends React.Component<SearchBarProps, SearchBarState> {
+export default class SearchBar extends BaseComponent<SearchBarProps, SearchBarState> {
   static defaultProps = defaultProps;
   refs: any;
   rightBtnInitMarginleft: any;
@@ -15,11 +16,6 @@ export default class SearchBar extends React.Component<SearchBarProps, SearchBar
     value: null,
     focus: false,
     focused: false,
-  }
-
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
   }
 
   constructor(props) {

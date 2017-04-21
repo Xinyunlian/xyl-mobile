@@ -9,6 +9,7 @@ import {observable, action,computed,toJS} from 'mobx';
 import {observer} from 'mobx-react';
 import ReactDOM from 'react-dom';
 import assign from 'object-assign';
+import BaseComponent from '../base/BaseComponent';
 
 export interface MarqueeProp {
   prefixCls?: string;
@@ -21,15 +22,12 @@ export interface MarqueeProp {
   style:any;
 }
 @observer
-class Marquee extends React.Component<MarqueeProp, any>{
+class Marquee extends BaseComponent<MarqueeProp, any>{
   @observable _state = {
     animatedWidth: 0,
     overflowWidth: 0
   }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
-  }
+
   _marqueeTimer;
 
   getDefaultProps() {

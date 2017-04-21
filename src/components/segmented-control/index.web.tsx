@@ -4,8 +4,10 @@ import {observer} from 'mobx-react';
 import classNames from 'classnames';
 import Touchable from 'rc-touchable';
 import SegmentedControlProps from './PropsType';
+import BaseComponent from '../base/BaseComponent';
+
 @observer
-export default class SegmentedControl extends React.Component<SegmentedControlProps, any> {
+export default class SegmentedControl extends BaseComponent<SegmentedControlProps, any> {
   static defaultProps = {
     prefixCls: 'am-segment',
     selectedIndex: 0,
@@ -18,10 +20,7 @@ export default class SegmentedControl extends React.Component<SegmentedControlPr
   @observable _state = {
     selectedIndex: null,
   }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
-  }
+
   constructor(props) {
     super(props);
     this.changeState({

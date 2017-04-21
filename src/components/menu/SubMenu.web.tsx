@@ -5,16 +5,14 @@ import {observer} from 'mobx-react';
 import classNames from 'classnames';
 import List from '../list/index.web';
 import Radio from '../radio/Radio.web';
+import BaseComponent from '../base/BaseComponent';
 
 @observer
-export default class SubMenu extends React.Component<any, any> {
+export default class SubMenu extends BaseComponent<any, any> {
   @observable _state = {
     selItem: null,
   }
-  @action changeState(state: any, callBack?: Function) {
-    this._state = Object.assign(toJS(this._state), state);
-    callBack();
-  }
+
   constructor(props) {
     super(props);
     this.changeState({
