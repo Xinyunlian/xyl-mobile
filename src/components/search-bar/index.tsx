@@ -46,7 +46,8 @@ export default class SearchBar extends BaseComponent<SearchBarProps, SearchBarSt
   componentDidUpdate() {
     // 检测是否包含名为 ${this.props.prefixCls}-start 样式，生成动画
     if (this.refs.searchInputContainer.className.indexOf(`${this.props.prefixCls}-start`) > -1) {
-      this.refs.syntheticPh.style.width = `${Math.ceil(this.refs.syntheticPhContainer.offsetWidth)}px`;
+      const realWidth = this.refs.syntheticPhContainer.getBoundingClientRect().width; // 包含小数
+      this.refs.syntheticPh.style.width = `${Math.ceil(realWidth)}px`;
       if (!this.props.showCancelButton) {
         this.refs.rightBtn.style.marginRight = 0;
       }
@@ -120,7 +121,7 @@ export default class SearchBar extends BaseComponent<SearchBarProps, SearchBarSt
         try {
           (document.activeElement as any).scrollIntoViewIfNeeded();
         } catch (e) { }
-      }, 0);
+      }, 100);
     }
   };
 
@@ -129,12 +130,12 @@ export default class SearchBar extends BaseComponent<SearchBarProps, SearchBarSt
       this.changeState({
         focus: false,
       });
-      if (!('focused' in this.props)) {
-        this.changeState({
-          focused: false,
-        });
-      }
     }, 0);
+    if (!('focused' in this.props)) {
+      this.changeState({
+        focused: false,
+      });
+    }
     if (this.props.onBlur) {
       this.props.onBlur();
     }

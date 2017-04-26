@@ -93,7 +93,6 @@ class InputItem extends BaseComponent < InputItemProps,any > {
       case 'text':
         break;
       case 'bankCard':
-        value = value.replace(/\D/g, '');
         value = value
           .replace(/\D/g, '')
           .replace(/(....)(?=.)/g, '$1 ');
@@ -227,7 +226,9 @@ class InputItem extends BaseComponent < InputItemProps,any > {
       'onExtraClick',
       'onErrorClick',
       'updatePlaceholder',
-      'placeholderTextColor'
+      'placeholderTextColor',
+      'autoFocus',
+       'type'
     ]);
 
     const {placeholder,focused} =this._state;
@@ -260,7 +261,7 @@ class InputItem extends BaseComponent < InputItemProps,any > {
       inputType = 'tel';
     } else if (type === 'password') {
       inputType = 'password';
-    } else if (type !== 'text') {
+    } else if (type !== 'text' && type !== 'number') {
       inputType = type;
     }
 

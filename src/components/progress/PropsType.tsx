@@ -11,6 +11,7 @@ interface ProgressProps {
   /** web only */
   prefixCls?: string;
   appearTransition?: boolean;
+  className?: string;
 }
 
 export default ProgressProps;
