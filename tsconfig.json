@@ -4,6 +4,7 @@
         "module": "es2015",
         "target": "es5",
         "jsx": "react",
+        "jsxFactory": "createElement",
         "alwaysStrict": true,
         "baseUrl": "src",
         "rootDirs": [

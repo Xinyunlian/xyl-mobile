@@ -1,10 +1,11 @@
-import * as React from 'react';
+import createElement from 'inferno-create-element';
+import Component from 'inferno-component';
+import {observer} from 'inferno-mobx';
 import {action, observable, toJS} from 'mobx';
-import {observer} from 'mobx-react';
 import assign from 'object-assign';
 
-@observer 
-export default class BaseComponent<P, S> extends React.Component<P, S> {
+@observer
+export default class BaseComponent<P, S> extends Component<P, S> {
 
     @observable public _state: S;
 

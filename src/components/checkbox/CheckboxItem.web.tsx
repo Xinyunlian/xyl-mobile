@@ -1,54 +1,57 @@
-import * as React from 'react';
+import createElement from 'inferno-create-element';
+import Component from 'inferno-component';
+import {observer} from 'inferno-mobx';
 import classNames from 'classnames';
 import List from '../list/index';
 import Checkbox from './Checkbox.web';
-import { CheckboxItemProps } from './PropsType';
+import {CheckboxItemProps} from './PropsType';
 import omit from 'omit.js';
-import { observer } from 'mobx-react';
 const ListItem = List.Item;
-function noop() { }
+function noop() {
+}
+
 @observer
-export default class CheckboxItem extends React.Component<CheckboxItemProps, any> {
-  static defaultProps = {
-    prefixCls: 'am-checkbox',
-    listPrefixCls: 'am-list',
-  };
+export default class CheckboxItem extends Component<CheckboxItemProps, any> {
+    static defaultProps = {
+        prefixCls: 'am-checkbox',
+        listPrefixCls: 'am-list',
+    };
 
-  render() {
-    const {
-      prefixCls, listPrefixCls, className, children, disabled, checkboxProps = {},
-    } = this.props;
+    render() {
+        const {
+            prefixCls, listPrefixCls, className, children, disabled, checkboxProps = {},
+        } = this.props;
 
-    const wrapCls = classNames({
-      [`${prefixCls}-item`]: true,
-      [`${prefixCls}-item-disabled`]: disabled === true,
-      [className as string]: className,
-    });
+        const wrapCls = classNames({
+            [`${prefixCls}-item`]: true,
+            [`${prefixCls}-item-disabled`]: disabled === true,
+            [className as string]: className,
+        });
 
-    // Note: if not omit `onChange`, it will trigger twice on check listitem
-    const otherProps = omit(this.props, ['listPrefixCls', 'onChange', 'disabled', 'checkboxProps']);
-    if (disabled) {
-      delete otherProps.onClick;
-    } else {
-      otherProps.onClick = otherProps.onClick || noop;
+        // Note: if not omit `onChange`, it will trigger twice on check listitem
+        const otherProps = omit(this.props, ['listPrefixCls', 'onChange', 'disabled', 'checkboxProps']);
+        if (disabled) {
+            delete otherProps.onClick;
+        } else {
+            otherProps.onClick = otherProps.onClick || noop;
+        }
+
+        const extraProps: any = {};
+        ['name', 'defaultChecked', 'checked', 'onChange', 'disabled'].forEach(i => {
+            if (i in this.props) {
+                extraProps[i] = this.props[i];
+            }
+        });
+
+        return (
+            <ListItem
+                {...otherProps}
+                prefixCls={listPrefixCls}
+                className={wrapCls}
+                thumb={<Checkbox {...checkboxProps} {...extraProps} />}
+            >
+                {children}
+            </ListItem>
+        );
     }
-
-    const extraProps: any = {};
-    ['name', 'defaultChecked', 'checked', 'onChange', 'disabled'].forEach(i => {
-      if (i in this.props) {
-        extraProps[i] = this.props[i];
-      }
-    });
-
-    return (
-      <ListItem
-        {...otherProps}
-        prefixCls={listPrefixCls}
-        className={wrapCls}
-        thumb={<Checkbox {...checkboxProps} {...extraProps} />}
-      >
-        {children}
-      </ListItem>
-    );
-  }
 }

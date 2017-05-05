@@ -1,55 +1,58 @@
-import { observer } from 'mobx-react';
-import * as React from 'react';
+import createElement from 'inferno-create-element';
+import Component from 'inferno-component';
+import {observer} from 'inferno-mobx';
 import classNames from 'classnames';
 import List from '../list/index';
 import Radio from './Radio.web';
-import { RadioItemProps } from './PropsType';
+import {RadioItemProps} from './PropsType';
 import omit from 'omit.js';
 
 const ListItem = List.Item;
-function noop() { }
+function noop() {
+}
 @observer
-export default class RadioItem extends React.Component<RadioItemProps, any> {
-  static defaultProps = {
-    prefixCls: 'am-radio',
-    listPrefixCls: 'am-list',
-  };
+export default class RadioItem extends Component<RadioItemProps, any> {
 
-  render() {
-    const {
-      prefixCls, listPrefixCls, className, children, disabled, radioProps = {},
-    } = this.props;
+    static defaultProps = {
+        prefixCls: 'am-radio',
+        listPrefixCls: 'am-list',
+    };
 
-    const wrapCls = classNames({
-      [`${prefixCls}-item`]: true,
-      [`${prefixCls}-item-disabled`]: disabled === true,
-      [className as string]: className,
-    });
+    render() {
+        const {
+            prefixCls, listPrefixCls, className, children, disabled, radioProps = {},
+        } = this.props;
 
-    // Note: if not omit `onChange`, it will trigger twice on check listitem
-    const otherProps = omit(this.props, ['listPrefixCls', 'onChange', 'disabled', 'radioProps']);
-    if (disabled) {
-      delete otherProps.onClick;
-    } else {
-      otherProps.onClick = otherProps.onClick || noop;
+        const wrapCls = classNames({
+            [`${prefixCls}-item`]: true,
+            [`${prefixCls}-item-disabled`]: disabled === true,
+            [className as string]: className,
+        });
+
+        // Note: if not omit `onChange`, it will trigger twice on check listitem
+        const otherProps = omit(this.props, ['listPrefixCls', 'onChange', 'disabled', 'radioProps']);
+        if (disabled) {
+            delete otherProps.onClick;
+        } else {
+            otherProps.onClick = otherProps.onClick || noop;
+        }
+
+        const extraProps: any = {};
+        ['name', 'defaultChecked', 'checked', 'onChange', 'disabled'].forEach(i => {
+            if (i in this.props) {
+                extraProps[i] = this.props[i];
+            }
+        });
+
+        return (
+            <ListItem
+                {...otherProps}
+                prefixCls={listPrefixCls}
+                className={wrapCls}
+                extra={<Radio {...radioProps} {...extraProps} />}
+            >
+                {children}
+            </ListItem>
+        );
     }
-
-    const extraProps: any = {};
-    ['name', 'defaultChecked', 'checked', 'onChange', 'disabled'].forEach(i => {
-      if (i in this.props) {
-        extraProps[i] = this.props[i];
-      }
-    });
-
-    return (
-      <ListItem
-        {...otherProps}
-        prefixCls={listPrefixCls}
-        className={wrapCls}
-        extra={<Radio {...radioProps} {...extraProps} />}
-      >
-        {children}
-      </ListItem>
-    );
-  }
 }
